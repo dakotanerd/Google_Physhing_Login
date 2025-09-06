@@ -1,51 +1,27 @@
-# Google Phishing Login (Educational Project)
+# Chat
 
-**Author:** Dakota Wellerbrady  
-**Course:** CS 4404  
+The chat tool allows us to interact with a language model inside of the GitLab runners with no special hardware! It is based on [Microsoft's BitNet Project](https://github.com/microsoft/BitNet?tab=readme-ov-file#build-from-source) and uses the [BitNet-b1.58-2B-4T](https://huggingface.co/microsoft/BitNet-b1.58-2B-4T) model with special [terenary quantization](https://arxiv.org/abs/2502.11880) to run efficently on CPU.
 
----
+### :warning: Warning
 
-## Project Overview
-This project demonstrates how a fake Google login page can be created 
-to highlight the dangers of phishing attacks.  
+**This is an experimental tool container.** Usage of this tool container is **at your own risk**. Language models can return **unexpected or offensive content and present various model security and data privacy concerns**.
 
-It is **strictly for educational purposes only** — the intent is to raise 
-awareness about human vulnerabilities and the risks of interacting 
-with suspicious websites.
+## Usage
 
-**Disclaimer:**  
-This project must **not** be used for malicious activity. Attempting to steal 
-credentials or mislead real users is **illegal and unethical**.  
-The code provided here does not conceal network information (such as open 
-ports, sockets, or IP addresses), making it unsuitable for real-world attacks.
+### Build
 
----
+Building the image locally requires the BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf file to be downloaded. The model weights are stored in this projects model registry. The [gitlab-ci.yml](/.gitlab-ci.yml) contains the job `pre-build-get-model` which provides an example of how to retreive the model weights with `curl`. Once you have the model weights, you can build the image with the following command:
 
-## Setup & Usage
+```
+docker build . -t chat
+```
 
-1. Open a terminal.  
-2. Navigate to the project folder:  
-   ```bash
-   cd "C:\Users\Owner\OneDrive\Desktop\stuff\FakeGoogleLogIn"
-   ```  
-3. Start the application:  
-   ```bash
-   node index.js
-   ```  
-4. You will see a URL in the terminal (e.g., `http://localhost:3000`).  
-5. Open this URL in your browser to view the fake login page.  
-6. To stop the server, press **Ctrl + C** (you may need to press twice).
+### Run
 
----
+If you've build the container locally, you can run the `chat` command with a prompt. For example,
 
-## Learning Objectives
-- Understand how phishing sites are structured.  
-- Recognize the importance of verifying URLs before entering sensitive data.  
-- Explore basic Node.js server functionality.  
+```
+docker run -it chat:latest chat "What is a CVE?"
+```
 
----
-
-## Ethical Use
-- This repository exists to **educate and raise awareness**.  
-- Do **not** disguise or deploy this project to trick real users.  
-- Always use responsibly within controlled lab environments.
+The [gitlab-ci.yml](/.gitlab-ci.yml) also contains the job `post-build-test` which provides an example using the container in a CI/CD pipeline.
