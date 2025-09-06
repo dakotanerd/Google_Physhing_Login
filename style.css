@@ -1,0 +1,659 @@
+/* Basic styling for the login page */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+    margin: 0;
+    background-color: var(--gm3-sys-color-surface-container,#f0f4f9)
+    
+  }
+  
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    width: 1000px;
+    height: 360px;
+    margin-top: 16%;
+
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-top: -30px; /* Adjusted 30px up (previously -6px) */
+    margin-left: 522px;
+    margin-right: 20%;
+    width: 465px;
+    height: 60px;
+    border-radius: 30px;
+  }
+  
+  
+  label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(11 87 208 / 1);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Google Sans', arial, sans-serif;
+    font-size: 14px;
+    height: 100%;
+    font-weight: 700;
+    
+  }
+  
+  button:hover {
+    background-color: #448aff;
+  }
+  
+  #loginEvents {
+    margin-top: 20px;
+  }
+  
+  #eventsList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #eventsList li {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  
+
+
+  .box>img {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+p {
+    font-family: 'Google Sans', arial, sans-serif;
+    color: rgb(153, 153, 153);
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#button2{
+    color: white;
+    font-family: 'Google Sans', arial, sans-serif;
+    background: #448aff;
+    border-radius: 15px;
+    width: 74px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.google_g_logo{
+    width: 100%;
+    max-width: 100px;
+    margin-top: 18px;
+    margin-left: 18px;
+    background-color: white;
+}
+
+.name_container{
+    
+    width: 500px;
+    height: 55px;
+    font-size: 43px;
+    color: black;
+    margin-top: 20px;
+    margin-left: 14.5px;
+    color: var(--gm3-sys-color-on-surface,#1f1f1f);
+  font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+  font-weight: 400;
+  font-weight: var(--c-tfwt,400);
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.email_container{
+    background-color: white;
+    font-family: 'Google Sans', arial, sans-serif;
+    margin-top: -10%;
+    margin-left: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.text_container1{
+    
+    width:360px;
+    height: 20px;
+    font-size: 13px;
+    margin-left: 524px;
+    margin-top: -51px;
+    margin-bottom: 48px;
+    font-weight: 600;
+    color: #505050;
+}
+
+.text_container2{
+    width: 135px;
+    height: 20px;
+    border-radius: 30px;
+    margin-left: 74.5%;
+    margin-top: 17.5%;
+    margin-bottom: -122px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    cursor: pointer; /* Changes cursor to a pointer when hovering */
+    color: #1a73e8;   /* Blue color for text */
+    text-align:center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    
+}
+
+
+.text_container2:hover {
+    text-decoration:none;  /* Underline on hover to indicate it's clickable */
+    background-color: rgb(244, 247, 250); /* Slightly darkened background on hover */
+    
+}
+
+
+.next_button{
+    
+    width: 80px;
+    height: 40px;
+    border-radius: 30px;
+    margin-left: 90.5%;
+    margin-top: 12%;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-weight: 600;
+}
+
+
+#email {
+  height: 55px;
+  font-size: 16px;
+  width: 99%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  margin-top: -26px; /* Adjusted 30px up (previously 4px) */
+  margin-left: 2px;
+}
+
+
+#email:focus {
+  border: 2.5px solid #1a73e8;  /* Blue border when focused */
+}
+
+/* When red_email is visible, make border red */
+#email.red-border:focus {
+  border: 2.5px solid rgb(134, 19, 19);  /* Red border when red_email is displayed */
+}
+
+
+  
+  /* Wrap the email input and toggle box */
+.email-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* Clickable Box (Now Positioned Below) */
+#toggleemail {
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 0s ease, box-shadow 0s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;  /* Moves it 20px below the email field */
+    margin-left: 52.75%;   /* Align it slightly to the left */
+    border: 2px solid black; /* Default border */
+}
+
+/* Hover Effect: Light Ray Circle */
+#toggleemail:hover {
+    background-color: #e0e0e0; /* Slightly darkened background on hover */
+    box-shadow: 0 0 0px 8px rgb(241, 245, 248)  /* Light ray circle effect */
+}
+
+/* When email is Shown: Display the Check Mark */
+#toggleemail.show-email {
+    background-color: var(--gm3-sys-color-primary,#0b57d0); /* Blue background when clicked */
+    border: 2px solid var(--gm3-sys-color-primary,#0b57d0);  /* Matching border with blue background */
+}
+
+#toggleemail.show-email::after {
+  content: "";
+  display: block; /* Makes the pseudo-element behave like a block element */
+  width: 15px; /* Set the width of your image */
+  height: 15px; /* Set the height of your image */
+  background-image: url('images/check_mark.png'); /* Path to your image */
+  background-size: cover; /* Make sure the image fits the dimensions */
+  background-position: center; /* Center the image */
+}
+
+
+/* When email is Hidden: Display an Empty Box */
+#toggleemail::after {
+    content: "";  /* Empty content initially */
+}
+
+.show_email{
+
+    width: 130px;
+    height: 20px;
+    margin-top: -28px;  /* Moves it 20px below the email field */
+    margin-left: 55%;   /* Align it slightly to the left */
+    margin-bottom: -122px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    cursor: pointer; /* Changes cursor to a pointer when hovering */
+    color: rgb(75, 75, 75);   /* Blue color for text */
+    text-align:center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+.english{
+    margin-top: 5.25%;
+    font-size: 12px;
+    margin-left: -17px;
+    margin-right: 20px;
+    width: 185px;
+    border-radius: 8px;
+    height: 25px;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    text-align:center;
+    margin-bottom: 5px;
+   /* border: 1px solid var(--gm3-sys-color-primary,#0b57d0);  */
+   font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+
+}
+
+  
+  .english:hover {
+    text-decoration:none;  /* Underline on hover to indicate it's clickable */
+    background-color: rgba(211, 210, 210, 0.288); /* Slightly darkened background on hover */
+    
+}
+
+
+.help{
+    margin-top: -38px;
+    font-size: 12px;
+    margin-left: 827px;
+    margin-right: 20px;
+    width: 48px;
+    border-radius: 8px;
+    height: 20px;
+    padding-top: 9px;
+    padding-bottom: 2px;
+    padding-left: 1px;
+    text-align:center;
+    font-weight: 600;
+    color: #8d8d8d;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    text-decoration: none;
+
+}
+
+  
+  .help:hover {
+    text-decoration:none;  /* Underline on hover to indicate it's clickable */
+    background-color: rgba(211, 210, 210, 0.288); /* Slightly darkened background on hover */
+    
+}
+
+
+.privacy{
+    margin-top: -32px;
+    font-size: 12px;
+    margin-left: 887px;
+    margin-right: 10px;
+    width: 58px;
+    border-radius: 8px;
+    height: 20px;
+    padding-top: 9px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    text-align:center;
+    font-weight: 600;
+    color: #8d8d8d;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    text-decoration: none;
+
+}
+
+  .privacy:hover {
+    text-decoration:none;  /* Underline on hover to indicate it's clickable */
+    background-color: rgba(211, 210, 210, 0.288); /* Slightly darkened background on hover */
+    
+}
+
+.terms{
+    margin-top: -32px;
+    font-size: 12px;
+    margin-left: 955px;
+    margin-right: 10px;
+    width: 58px;
+    border-radius: 8px;
+    height: 20px;
+    padding-top: 9px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    text-align:center;
+    font-weight: 600;
+    color: #8d8d8d;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    text-decoration: none;
+
+}
+
+  
+  .terms:hover {
+    text-decoration:none;  /* Underline on hover to indicate it's clickable */
+    background-color: rgba(211, 210, 210, 0.288); /* Slightly darkened background on hover */    
+}
+
+
+.account{
+    margin-top: -270px;
+    margin-left: 12px;
+    width: 190px;
+    border-radius: 20px;
+    height: 16px;
+    padding-top: 7px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #1f1f1f;
+    color: var(--gm3-sys-color-on-surface,#1f1f1f);
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    z-index: 2; /* Ensure it's above the text box */
+}
+
+  
+  .account:hover {
+    text-decoration:none;  /* Underline on hover to indicate it's clickable */
+    background-color: rgba(211, 210, 210, 0.288); /* Slightly darkened background on hover */
+    
+}
+
+.help a, .privacy a, .terms a, .english a, .account a{
+    text-align:center;
+    font-weight: 600;
+    color: #505050;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    text-decoration: none;
+  }
+  
+  .help a:hover, .privacy a:hover, .terms a:hover {
+    background-color: rgba(211, 210, 210, 0.288); 
+  }
+
+
+.small_text{
+
+    color:#1a73e8;
+    font-size: 12px;
+    background-color: white;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-weight: 600;
+    width: 90px;
+    height: 20px;
+    text-align: center;
+    margin-left: 590px;
+    margin-top: -80px;
+    transform: translate(-50%, -50%); /* Offset to center it perfectly */
+    z-index: 1; /* Ensure it's above the text box */
+    position: absolute;
+    display: none;
+}
+
+.small_text.greyed {
+    color: rgb(90, 90, 90); /* Change to grey when text is typed and focus is lost */
+  }
+
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #ccc; /* Default Google gray underline */
+    outline: none;
+    margin-top: -20px;
+  }
+  
+  input[type="email"]:focus {
+    border-bottom: 2px solid #1a73e8; /* Google's blue focus border */
+  }
+
+
+  .red_email{
+
+    width: 130px;
+    height: 20px;
+    margin-top: 20px;  /* Moves it 20px below the email field */
+    margin-left: 520px;   /* Align it slightly to the left */
+    margin-bottom: -122px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    cursor: pointer; /* Changes cursor to a pointer when hovering */
+    color: rgb(176, 6, 6);
+    text-align:center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 20px;
+    position: absolute;
+    display: none;
+  
+}
+
+.wrong_email{
+
+  width: 130px;
+  height: 20px;
+  margin-top: 20px;  /* Moves it 20px below the email field */
+  margin-left: 528px;   /* Align it slightly to the left */
+  margin-bottom: -122px;
+  font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+  cursor: pointer; /* Changes cursor to a pointer when hovering */
+  color: rgb(176, 6, 6);
+  text-align:center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 20px;
+  position: absolute;
+  display: none;
+
+}
+
+
+.small_text2{
+
+  color:rgb(176, 6, 6);
+  font-size: 12px;
+  background-color: white;
+  font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+  font-weight: 500;
+  width: 118px;
+  height: 20px;
+  text-align: center;
+  margin-left: 590px;
+  margin-top: -78px;
+  transform: translate(-50%, -50%); /* Offset to center it perfectly */
+  z-index: 1; /* Ensure it's above the text box */
+  position: absolute;
+  display: none;
+}
+
+
+
+
+.loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1a73e8;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.user_photo{
+
+  width: 100%;
+  max-width: 8px;
+  margin-top: -29px;
+  margin-left: 20px;
+  z-index: 0; /* Ensure it's above the text box */
+}
+
+
+.forgot_email{
+  font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+  color: blue;
+  margin-left: 525px;
+  font-weight: 500;
+  margin-top: -15px;
+  font-size: 14px;
+  text-decoration-color: blue; 
+  border-radius: 20px;
+
+}
+
+
+.not_your{
+  font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+  color: black;
+  margin-left: 525px;
+  font-weight: 500;
+  margin-top: 50px;
+  font-size: 14px;
+
+}
+
+.guest_mode{
+  font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+  color: blue;
+  margin-left: 525px;
+  font-weight: 500;
+  margin-top: 5px;
+  font-size: 14px;
+  text-decoration-color: blue; 
+
+}
+
+/* Default styling for the links */
+.forgot_email a, 
+.not_your a, 
+.guest_mode a {
+  font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+  color: blue !important; /* Ensures text is always blue */
+  text-decoration: none !important; /* No underline by default */
+}
+
+/* Ensures visited links also remain blue without underline */
+.forgot_email a:visited, 
+.not_your a:visited, 
+.guest_mode a:visited {
+  color: blue !important;
+  text-decoration: none !important; /* No underline after visiting */
+}
+
+/* Underline appears only on hover */ 
+.not_your a:hover, 
+.guest_mode a:hover {
+  text-decoration: underline !important; /* Underline only on hover */
+  text-decoration-color: blue !important; /* Underline color remains blue */
+}
+
+
+.forgot_email a:hover{
+  background-color: rgb(241, 245, 248);
+  box-shadow: 0 0 0px 8px rgb(241, 245, 248);
+  border-radius: 20px;
+}
+
+.create{
+
+    width: 125px;
+    padding: 10px;
+    color: blue;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Google Sans', arial, sans-serif;
+    font-size: 14px;
+    height: 20px;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-left: 740px;
+}
+
+.create:hover{
+  background-color: rgb(241, 245, 248);
+  box-shadow: 0 0 0px 2px rgb(241, 245, 248);
+}
+
+.download-container{
+
+  width: 0%;
+  height: 0px;
+  display: none;
+  background-color: white;
+  margin-top: -20px;
+}

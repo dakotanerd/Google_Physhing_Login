@@ -1,0 +1,259 @@
+/* Basic styling for the login page */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    margin: 0;
+    background-color: var(--gm3-sys-color-surface-container,#f0f4f9);
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    width: 1000px;
+    height: 870px;
+    margin-top: 10px;
+}
+
+.google_g_logo {
+    width: 100%;
+    max-width: 100px;
+    margin-top: 18px;
+    margin-left: 18px;
+    background-color: white;
+}
+
+.name_container {
+    width: 500px;
+    height: 55px;
+    font-size: 43px;
+    color: black;
+    margin-top: 20px;
+    margin-left: 14.5px;
+    color: var(--gm3-sys-color-on-surface,#1f1f1f);
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-weight: 400;
+    line-height: 1.25;
+    word-break: break-word;
+}
+
+.account {
+    margin-top: 25px;
+    margin-left: 16px;
+    width: 160px; /* Default width */
+    border-radius: 20px;
+    height: 16px;
+    padding: 7px 15px; /* Adjust padding */
+    font-weight: 700;
+    border: 1px solid black;
+    font-size: 13px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Push arrow to the end */
+    color: var(--gm3-sys-color-on-surface,#1f1f1f);
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    z-index: 2; /* Ensure it's above the text box */
+    padding-left: 32px;
+}
+
+
+
+.account:hover {
+    text-decoration: none;
+    background-color: rgba(211, 210, 210, 0.288);
+}
+
+.account a {
+    text-align: center;
+    font-weight: 600;
+    color: #505050;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    text-decoration: none;
+}
+
+.text_container {
+    width: 500px;
+    height: 55px;
+    font-size: 17px;
+    color: rgb(97, 97, 97);
+    margin-top: 10px;
+    margin-left: 15px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    font-weight: 100;
+    line-height: 1.75;
+    word-break: break-word;
+}
+
+.video {
+    width: 540px;
+    height: 440px;
+    margin-left: 490px;
+    margin-top: -210px;
+    margin-bottom: 25px;
+    pointer-events: none; /* Prevents clicks */
+}
+
+.video video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none; /* Ensures the video itself is not clickable */
+}
+
+
+.open {
+    width: 400px;
+    height: 35px;
+    font-size: 20px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    margin-left: 540px;
+    color: #383838;
+    line-height: 2;
+    
+}
+
+.small_text {
+    background-color: white;
+    width: 440px;
+    height: 35px;
+    font-size: 13px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    margin-top: 10px;
+    margin-left: 540px;
+    color: #505050;
+    line-height: 1.5;
+}
+
+/* Clickable Box */
+#togglePassword {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    margin-top: 30px;  
+    margin-left: 540px;
+}
+
+/* Hover Effect */
+#togglePassword:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 0px 8px rgb(241, 245, 248);
+}
+
+/* When Clicked (Show Check Mark) */
+#togglePassword.show-password {
+    background-color: var(--gm3-sys-color-primary, #0b57d0);
+    border: 3px solid var(--gm3-sys-color-primary, #0b57d0);
+}
+
+#togglePassword.show-password::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url('images/check_mark.png'); /* Make sure this path is correct */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Default Empty Box */
+#togglePassword::after {
+    content: "";
+}
+
+
+
+.dont_show_again{
+
+    width: 210px;
+    height: 20px;
+    margin-top: -28px;  /* Moves it 20px below the password field */
+    margin-left: 565px;   /* Align it slightly to the left */
+    margin-bottom: -122px;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    cursor: pointer; /* Changes cursor to a pointer when hovering */
+    color: rgb(35, 35, 35);   /* Blue color for text */
+    text-align:center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    
+    background-color: white;
+}
+
+.resend_it{
+
+    background-color: white;
+    width: 90px;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 180px;
+    font-size: 16px;
+    color: #1a73e8;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.resend_it:hover {
+    background-color: rgb(241, 245, 248);
+    box-shadow: 0 0 0px 8px rgb(241, 245, 248);
+}
+
+.try_another_way{
+
+    background-color: white;
+    width: 130px;
+    height: 20px;
+    margin-left: 820px;
+    margin-top: 100px;
+    font-size: 16px;
+    color: #1a73e8;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 600;
+    
+}
+
+.try_another_way:hover {
+    background-color: rgb(241, 245, 248);
+    box-shadow: 0 0 0px 8px rgb(241, 245, 248);
+    
+}
+
+.try_another_way a , .resend_it a{
+
+    text-align:center;
+    font-weight: 600;
+    color: #1a73e8;
+    font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
+    text-decoration: none;
+}
+
+
+.user_photo{
+
+    width: 100%;
+    max-width: 8px;
+    margin-top: -624px;
+    margin-left: 20px;
+    z-index: 0; /* Ensure it's above the text box */
+  }
+
+  
+
+  .arrow{
+    margin-left: 190px;
+    width:25px;
+    height: 20px;
+    margin-top: -25px;
+  }

