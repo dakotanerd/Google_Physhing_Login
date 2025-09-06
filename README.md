@@ -26,7 +26,7 @@ ports, sockets, or IP addresses), making it unsuitable for real-world attacks.
 1. Open a terminal.  
 2. Navigate to the project folder:  
    ```bash
-   cd "C:\Users\Owner\OneDrive\Desktop\stuff\FakeGoogleLogIn"
+   cd "C:\Users\Owner\OneDrive\Downloads\FakeGoogleLogIn"
    ```  
 3. Start the application:  
    ```bash
