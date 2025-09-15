@@ -29,6 +29,11 @@ Verify by running in your terminal (Command Prompt or PowerShell on Windows):
    node -v
    npm -v
    ```  
+Both commands should print version numbers (for example, v20.x.x and x.x.x).
+If Node.js is not installed, download and install the LTS version from the official site: 
+```bash
+   https://nodejs.org/ 
+   ```  
 
 1. Open a terminal.  
 2. Navigate to the project folder:  
