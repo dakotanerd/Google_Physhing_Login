@@ -22,6 +22,13 @@ ports, sockets, or IP addresses), making it unsuitable for real-world attacks.
 ---
 
 ## Setup & Usage
+Prerequisites:
+Node.js (LTS recommended) must be installed and available in your PATH.
+Verify by running in your terminal (Command Prompt or PowerShell on Windows):
+ ```bash
+   node -v
+   npm -v
+   ```  
 
 1. Open a terminal.  
 2. Navigate to the project folder:  
