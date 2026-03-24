@@ -3,7 +3,9 @@
 **Authors:** Dakota Wellerbrady & Jason Luc
 
 **College:** WPI
-**Course:** CS 4404  
+
+**Course:** CS 4404 
+
 **Professor:** Jun Dai
 
 ---
