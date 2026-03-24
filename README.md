@@ -1,7 +1,9 @@
 # Google Phishing Login (Educational Project)
 
-**Author:** Dakota Wellerbrady  
+**Authors:** Dakota Wellerbrady & Jason Luc
+**College:** WPI
 **Course:** CS 4404  
+**Professor:** Jun Dai
 
 ---
 
